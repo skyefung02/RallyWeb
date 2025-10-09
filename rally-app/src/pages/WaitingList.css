@@ -12,7 +12,7 @@
 
 /* Hero Section - Orange Theme */
 .hero-section {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: none;
   color: white;
   padding: 60px 0 80px;
   position: relative;
@@ -75,7 +75,7 @@
 
 .join-button {
   padding: 16px 24px;
-  background: #ff6b35;
+  background: #667eea;
   color: white;
   border: none;
   font-size: 16px;
@@ -306,7 +306,7 @@
 }
 
 .partnership-button {
-  background: #ff6b35;
+  background: #667eea;
   color: white;
   border: none;
   padding: 12px 24px;

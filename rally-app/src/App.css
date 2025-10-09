@@ -17,20 +17,13 @@ body {
 
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-.main-content {
-  flex: 1;
-  padding-top: 80px; /* Account for fixed navigation */
-}
-
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
+} */
 
 /* Utility classes */
 .highlight {
@@ -42,10 +35,6 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .main-content {
-    padding-top: 70px;
-  }
-  
   .container {
     padding: 0 16px;
   }

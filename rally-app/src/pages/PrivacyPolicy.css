@@ -1,0 +1,147 @@
+/* Privacy Policy Styling */
+.privacy-policy {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #333333;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.privacy-policy h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.privacy-policy h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 40px 0 20px 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.privacy-policy h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 30px 0 15px 0;
+}
+
+.privacy-policy p {
+  margin-bottom: 15px;
+  color: #595959;
+  font-size: 15px;
+}
+
+.privacy-policy ul {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.privacy-policy li {
+  margin-bottom: 8px;
+  color: #595959;
+  font-size: 15px;
+}
+
+.privacy-policy a {
+  color: #3030F1;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.privacy-policy a:hover {
+  text-decoration: underline;
+}
+
+.privacy-policy strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+.privacy-policy em {
+  font-style: italic;
+}
+
+/* Table styling */
+.privacy-policy table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.privacy-policy th,
+.privacy-policy td {
+  border: 1px solid #000000;
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.privacy-policy th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #000000;
+}
+
+.privacy-policy td {
+  color: #595959;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .privacy-policy {
+    padding: 20px 15px;
+  }
+  
+  .privacy-policy h1 {
+    font-size: 2rem;
+  }
+  
+  .privacy-policy h2 {
+    font-size: 1.5rem;
+  }
+  
+  .privacy-policy h3 {
+    font-size: 1.2rem;
+  }
+  
+  .privacy-policy table {
+    font-size: 14px;
+  }
+  
+  .privacy-policy th,
+  .privacy-policy td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-policy {
+    padding: 15px 10px;
+  }
+  
+  .privacy-policy h1 {
+    font-size: 1.8rem;
+  }
+  
+  .privacy-policy h2 {
+    font-size: 1.3rem;
+  }
+  
+  .privacy-policy table {
+    font-size: 12px;
+  }
+  
+  .privacy-policy th,
+  .privacy-policy td {
+    padding: 6px;
+  }
+}
