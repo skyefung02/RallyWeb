@@ -9,6 +9,11 @@
   line-height: 1.6;
 }
 
+.privacy-policy-container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
 .privacy-policy h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -145,3 +150,5 @@
     padding: 6px;
   }
 }
+
+
