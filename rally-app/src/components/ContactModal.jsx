@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './Contact.css';
+import './ContactModal.css';
 
-const Contact = () => {
+const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,23 +30,35 @@ const Contact = () => {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
+  const handleClose = () => {
+    setIsSubmitted(false);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
   return (
-    <div className="contact-page">
-      <div className="contact-container">
-        <div className="contact-header">
-          <h1 className="contact-title">Get in Touch</h1>
-          <p className="contact-subtitle">
+    <div className="modal-overlay" onClick={handleClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={handleClose} aria-label="Close modal">
+          ×
+        </button>
+
+        <div className="modal-header">
+          <h2 className="modal-title">Get in Touch</h2>
+          <p className="modal-subtitle">
             Have a question or want to partner with us? We'd love to hear from you.
           </p>
         </div>
 
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form onSubmit={handleSubmit} className="modal-form">
             <div className="form-group">
-              <label htmlFor="name" className="form-label">Name</label>
+              <label htmlFor="modal-name" className="form-label">Name</label>
               <input
                 type="text"
-                id="name"
+                id="modal-name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -57,10 +69,10 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="modal-email" className="form-label">Email</label>
               <input
                 type="email"
-                id="email"
+                id="modal-email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -71,10 +83,10 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="subject" className="form-label">Subject</label>
+              <label htmlFor="modal-subject" className="form-label">Subject</label>
               <input
                 type="text"
-                id="subject"
+                id="modal-subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -85,16 +97,16 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message" className="form-label">Message</label>
+              <label htmlFor="modal-message" className="form-label">Message</label>
               <textarea
-                id="message"
+                id="modal-message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 className="form-textarea"
                 placeholder="Tell us more..."
-                rows="6"
+                rows="5"
               />
             </div>
 
@@ -121,15 +133,15 @@ const Contact = () => {
                 <path className="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
               </svg>
             </div>
-            <h2 className="success-title">Message Sent!</h2>
+            <h3 className="success-title">Message Sent!</h3>
             <p className="success-message">
               Thanks for reaching out. We'll get back to you within 24 hours.
             </p>
             <button
-              onClick={() => setIsSubmitted(false)}
-              className="send-another-button"
+              onClick={handleClose}
+              className="close-success-button"
             >
-              Send Another Message
+              Close
             </button>
           </div>
         )}
@@ -138,4 +150,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactModal;

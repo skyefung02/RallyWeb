@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ContactModal from '../components/ContactModal';
 import './SimpleWaitlist.css';
 
 const SimpleWaitlist = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,13 +25,22 @@ const SimpleWaitlist = () => {
     <div className="creative-waitlist">
       {/* Top navigation buttons */}
       <div className="top-navigation">
-        <Link to="/contact" className="contact-button">
+        <button
+          onClick={() => setIsContactModalOpen(true)}
+          className="contact-button"
+        >
           Contact Us
-        </Link>
+        </button>
         <Link to="/privacy" className="privacy-link">
           Privacy Policy
         </Link>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
 
       {/* Animated background elements */}
       <div className="bg-animation">
