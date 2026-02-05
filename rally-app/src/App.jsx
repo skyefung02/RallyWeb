@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ModernLanding from './pages/ModernLanding';
 import SimpleWaitlist from './pages/SimpleWaitlist';
 import Contact from './pages/Contact';
@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/RallyWeb">
       <div className="App">
         <Routes>
           <Route path="/" element={<ModernLanding />} />
@@ -18,6 +18,7 @@ function App() {
           <Route path="/future" element={<Future />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/data-collection" element={<DataCollection />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
