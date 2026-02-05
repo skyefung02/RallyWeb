@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ModernLanding from './pages/ModernLanding';
 import SimpleWaitlist from './pages/SimpleWaitlist';
 import Contact from './pages/Contact';
 import Future from './pages/Future';
@@ -11,7 +12,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<SimpleWaitlist />} />
+          <Route path="/" element={<ModernLanding />} />
+          <Route path="/old" element={<SimpleWaitlist />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/future" element={<Future />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
