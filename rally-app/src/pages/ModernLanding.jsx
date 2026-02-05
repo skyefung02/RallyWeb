@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaFacebook, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import ContactModal from '../components/ContactModal';
 
 const ModernLanding = () => {
@@ -437,14 +439,46 @@ const ModernLanding = () => {
                 Connecting athletes and sports enthusiasts through pickup games and local sports communities.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors">
-                  <span className="text-lg">𝕏</span>
+                <a
+                  href="https://instagram.com/rallygames.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="text-lg" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors">
-                  <span className="text-lg">IG</span>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors opacity-50"
+                  aria-label="X (Twitter)"
+                  style={{ cursor: 'not-allowed' }}
+                >
+                  <FaXTwitter className="text-lg" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors">
-                  <span className="text-lg">FB</span>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors opacity-50"
+                  aria-label="Facebook"
+                  style={{ cursor: 'not-allowed' }}
+                >
+                  <FaFacebook className="text-lg" />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors opacity-50"
+                  aria-label="LinkedIn"
+                  style={{ cursor: 'not-allowed' }}
+                >
+                  <FaLinkedin className="text-lg" />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors opacity-50"
+                  aria-label="TikTok"
+                  style={{ cursor: 'not-allowed' }}
+                >
+                  <FaTiktok className="text-lg" />
                 </a>
               </div>
             </div>

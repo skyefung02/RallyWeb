@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,6 +11,55 @@ const Footer = () => {
           <Link to="/" className="footer-logo">
             <span className="logo-text">Rally</span>
           </Link>
+          <div style={{ marginTop: '20px' }}>
+            <h3 className="footer-title">Follow Us</h3>
+            <div className="social-links">
+              <a
+                href="https://instagram.com/rallygames.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              >
+                <FaTiktok />
+              </a>
+            </div>
+          </div>
         </div>
           
           <div className="footer-section">

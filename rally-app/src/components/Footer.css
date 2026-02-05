@@ -87,15 +87,17 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #e2e8f0;
+  color: #64748b;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #ff6b35;
+  color: white;
   transform: translateY(-2px);
 }
 
