@@ -487,10 +487,28 @@ const ModernLanding = () => {
             <div>
               <h3 className="font-semibold text-white mb-4">Product</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">How It Works</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">FAQ</a></li>
+                <li>
+                  <span className="text-slate-300 cursor-default">Features</span>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('how-it-works')}
+                    className="hover:text-orange-500 transition-colors text-left"
+                  >
+                    How It Works
+                  </button>
+                </li>
+                <li>
+                  <span className="text-slate-300 cursor-default">Pricing</span>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('faq')}
+                    className="hover:text-orange-500 transition-colors text-left"
+                  >
+                    FAQ
+                  </button>
+                </li>
               </ul>
             </div>
 
