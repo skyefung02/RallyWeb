@@ -1,30 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebook, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin, FaTiktok, FaApple } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import ContactModal from '../components/ContactModal';
+import rallyLogo from '../assets/logo.png';
 
 const ModernLanding = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    setIsSubmitted(true);
-    setIsLoading(false);
-    setEmail('');
-
-    // Reset after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -128,7 +111,7 @@ const ModernLanding = () => {
 
   const faqs = [
     {
-      question: "How much does Rally cost?",
+      question: "Is Rally free?",
       answer: "Rally is free to download and use. Some premium features and organized games may have associated fees, but finding and joining most pickup games is completely free."
     },
     {
@@ -145,7 +128,7 @@ const ModernLanding = () => {
     },
     {
       question: "When will Rally be available?",
-      answer: "We're currently in development and will be launching soon! Join our waitlist to get early access and be notified as soon as we launch in your area."
+      answer: "Rally is available now on the iOS App Store! Download it today to get started. Android support is coming soon — join our waitlist to be notified when we launch on Google Play."
     }
   ];
 
@@ -154,9 +137,9 @@ const ModernLanding = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold cursor-pointer hover:opacity-80 transition-opacity">
-            <span className="text-slate-900">Rally</span>
-            <span className="text-orange-500">.</span>
+          <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+            <img src={rallyLogo} alt="Rally" className="w-8 h-8 rounded-lg" />
+            <span className="text-2xl font-bold text-slate-900">Rally<span className="text-orange-500">.</span></span>
           </Link>
 
           {/* Center Navigation Links */}
@@ -176,13 +159,16 @@ const ModernLanding = () => {
           </div>
 
           {/* Right Side CTAs */}
-          <div className="flex gap-4 items-center">
-            <button
-              onClick={() => scrollToSection('signup')}
-              className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg text-sm"
+          <div className="flex gap-3 items-center">
+            <a
+              href="https://apps.apple.com/us/app/rally-games/id6752875649"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg text-sm items-center gap-2"
             >
-              Join Waitlist
-            </button>
+              <FaApple className="text-base" />
+              Download
+            </a>
           </div>
         </div>
       </nav>
@@ -206,47 +192,40 @@ const ModernLanding = () => {
                 </p>
               </div>
 
-              {/* Email Signup Form */}
-              <div id="signup" className="scroll-mt-24">
-                {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      required
-                      className="flex-1 px-6 py-4 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all text-base"
-                    />
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 whitespace-nowrap"
-                    >
-                      {isLoading ? 'Joining...' : 'Join Waitlist'}
-                    </button>
-                  </form>
-                ) : (
-                  <div className="flex items-center gap-3 px-6 py-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-                    <span className="text-2xl">✓</span>
-                    <span className="text-emerald-700 font-medium">You're on the waitlist! Check your email.</span>
+              {/* App Store CTA */}
+              <div className="space-y-4">
+                <a
+                  href="https://apps.apple.com/us/app/rally-games/id6752875649"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-slate-900 text-white px-6 py-4 rounded-2xl hover:bg-slate-800 hover:scale-105 transition-all shadow-lg"
+                >
+                  <FaApple className="text-4xl" />
+                  <div className="text-left">
+                    <p className="text-xs text-slate-400 leading-none">Download on the</p>
+                    <p className="text-lg font-semibold leading-tight">App Store</p>
                   </div>
-                )}
-                <p className="text-sm text-slate-500 mt-3">
-                  Join <span className="font-semibold text-orange-600">2,847</span> athletes waiting for early access
+                </a>
+                <p className="text-sm text-slate-500">
+                  Android coming soon — <span className="font-medium text-slate-600">stay tuned</span>
                 </p>
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center gap-6 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
                   <span className="text-orange-500">✓</span>
                   <span>Free to use</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <a
+                  href="https://apps.apple.com/us/app/rally-games/id6752875649"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-orange-500 transition-colors"
+                >
                   <span className="text-orange-500">✓</span>
-                  <span>iOS & Android</span>
-                </div>
+                  <span>Available on iOS</span>
+                </a>
                 <div className="flex items-center gap-2">
                   <span className="text-orange-500">✓</span>
                   <span>No credit card</span>
@@ -388,23 +367,23 @@ const ModernLanding = () => {
                 Download Rally
               </h2>
               <p className="text-xl text-orange-50 mb-12 max-w-2xl mx-auto">
-                Get ready to transform your free time into game time. Sign up for early access.
+                Your next game is waiting. Download Rally and start playing today.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                {/* App Store Badge */}
-                <div className="relative group">
-                  <img
-                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83"
-                    alt="Download on the App Store"
-                    className="h-14 opacity-50 group-hover:opacity-40 transition-opacity"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/90 px-4 py-2 rounded-lg text-orange-600 font-semibold text-sm">
-                      Coming Soon
-                    </span>
+                {/* App Store Button */}
+                <a
+                  href="https://apps.apple.com/us/app/rally-games/id6752875649"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-2xl hover:bg-orange-50 hover:scale-105 transition-all shadow-sm"
+                >
+                  <FaApple className="text-4xl" />
+                  <div className="text-left">
+                    <p className="text-xs text-slate-500 leading-none">Download on the</p>
+                    <p className="text-lg font-semibold leading-tight">App Store</p>
                   </div>
-                </div>
+                </a>
 
                 {/* Google Play Badge */}
                 <div className="relative group">
@@ -431,9 +410,9 @@ const ModernLanding = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Brand Column */}
             <div className="md:col-span-2">
-              <div className="text-2xl font-bold mb-4">
-                <span className="text-white">Rally</span>
-                <span className="text-orange-500">.</span>
+              <div className="flex items-center gap-2.5 mb-4">
+                <img src={rallyLogo} alt="Rally" className="w-10 h-10 rounded-xl" />
+                <span className="text-2xl font-bold text-white">Rally<span className="text-orange-500">.</span></span>
               </div>
               <p className="text-slate-400 mb-6 max-w-md">
                 Connecting athletes and sports enthusiasts through pickup games and local sports communities.
