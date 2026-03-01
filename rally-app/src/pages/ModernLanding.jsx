@@ -109,6 +109,37 @@ const ModernLanding = () => {
     }
   ];
 
+  const upcomingFeatures = [
+    {
+      title: "Reliability Score",
+      description: "A trust rating that shows how consistently a player shows up to games they commit to. No more last-minute no-shows.",
+      icon: "🤝",
+      color: "bg-rose-100 text-rose-600",
+      tag: "Player Trust"
+    },
+    {
+      title: "Skill ELO",
+      description: "A dynamic skill rating per sport, built from your real game history. Find players at your level and watch your rating climb.",
+      icon: "📈",
+      color: "bg-blue-100 text-blue-600",
+      tag: "Competitive"
+    },
+    {
+      title: "Streaks",
+      description: "Keep the momentum going. Track how many consecutive days or weeks you've played and compete with friends to stay on top.",
+      icon: "🔥",
+      color: "bg-orange-100 text-orange-600",
+      tag: "Social"
+    },
+    {
+      title: "Achievement Badges",
+      description: "Earn badges for milestones like games played, sports mastered, and community contributions. Show them off on your profile.",
+      icon: "🏅",
+      color: "bg-amber-100 text-amber-600",
+      tag: "Social"
+    }
+  ];
+
   const faqs = [
     {
       question: "Is Rally free?",
@@ -311,6 +342,64 @@ const ModernLanding = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Features Section */}
+      <section className="py-20 px-6 bg-slate-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-orange-500/20 text-orange-400 text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">
+              Coming Soon
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              What's on the Way
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              We're building features to make your Rally experience more competitive, social, and rewarding.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {upcomingFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="group relative bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-orange-500/50 hover:bg-slate-750 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                {/* Glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+
+                <div className="relative z-10">
+                  {/* Tag */}
+                  <span className="inline-block px-2.5 py-1 bg-slate-700 text-slate-400 text-xs font-medium rounded-md mb-5">
+                    {feature.tag}
+                  </span>
+
+                  {/* Icon */}
+                  <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform`}>
+                    {feature.icon}
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm">{feature.description}</p>
+                </div>
+
+                {/* Corner lock badge */}
+                <div className="absolute top-4 right-4 text-slate-600 text-lg">🔒</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-slate-500 text-sm mt-10">
+            Have a feature idea?{' '}
+            <button
+              onClick={() => setIsContactModalOpen(true)}
+              className="text-orange-400 hover:text-orange-300 transition-colors font-medium underline underline-offset-2"
+            >
+              Let us know
+            </button>
+          </p>
         </div>
       </section>
 
