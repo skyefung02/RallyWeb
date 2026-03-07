@@ -267,7 +267,7 @@ const ModernLanding = () => {
 
             {/* Right: App Mockup */}
             <div className="relative overflow-hidden rounded-3xl">
-              <img src={appMockup} alt="Rally App Mockup" className="w-full scale-[1.9] origin-center" />
+              <img src={appMockup} alt="Rally App Mockup" className="w-full scale-[1.85] origin-center" />
             </div>
           </div>
         </div>
