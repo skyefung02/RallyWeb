@@ -4,6 +4,7 @@ import { FaInstagram, FaFacebook, FaLinkedin, FaTiktok, FaApple } from 'react-ic
 import { FaXTwitter } from 'react-icons/fa6';
 import ContactModal from '../components/ContactModal';
 import rallyLogo from '../assets/logo.png';
+import appMockup from '../mockup.jpg';
 
 const ModernLanding = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -264,18 +265,9 @@ const ModernLanding = () => {
               </div>
             </div>
 
-            {/* Right: App Mockup Placeholder */}
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-orange-50 to-slate-100 rounded-3xl p-12 aspect-square flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="text-8xl">📱</div>
-                  <p className="text-slate-400 font-medium">App Mockup</p>
-                  <p className="text-sm text-slate-400">Coming Soon</p>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
-              </div>
+            {/* Right: App Mockup */}
+            <div className="relative overflow-hidden rounded-3xl">
+              <img src={appMockup} alt="Rally App Mockup" className="w-full scale-[1.9] origin-center" />
             </div>
           </div>
         </div>
