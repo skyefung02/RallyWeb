@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/RallyWeb">
+    <Router basename="/">
       <div className="App">
         <Routes>
           <Route path="/" element={<ModernLanding />} />
