@@ -206,13 +206,13 @@ const ModernLanding = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text Content */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
                   Find Your Next{' '}
                   <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                     Game
@@ -267,7 +267,7 @@ const ModernLanding = () => {
 
             {/* Right: App Mockup */}
             <div className="relative overflow-hidden rounded-3xl">
-              <img src={appMockup} alt="Rally App Mockup" className="w-full scale-[1.85] origin-center" />
+              <img src={appMockup} alt="Rally App Mockup" className="w-full md:scale-[1.85] origin-center" />
             </div>
           </div>
         </div>
@@ -415,7 +415,7 @@ const ModernLanding = () => {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+                  className="w-full px-4 md:px-8 py-5 md:py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                 >
                   <span className="font-semibold text-slate-900 text-lg pr-8">{faq.question}</span>
                   <span className={`text-orange-500 text-2xl transition-transform duration-300 flex-shrink-0 ${openFaqIndex === index ? 'rotate-45' : ''}`}>
